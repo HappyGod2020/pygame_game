@@ -2,9 +2,13 @@ import socket
 
 sock = socket.socket()
 sock.connect(('localhost', 8080))
-sock.send('hello, world!')
+s = input("Введите сообщение: ")
+sock.send(bytes(s, encoding='utf-8'))
 
 data = sock.recv(5120)
 sock.close()
 
 print(data)
+
+
+bytes(s, encoding='utf-8')
